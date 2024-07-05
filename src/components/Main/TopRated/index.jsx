@@ -10,7 +10,7 @@ const tabData = [
   {
     id: 1,
     title: "무비차트",
-    category: "top_rated",
+    category: "popular",
   },
   {
     id: 2,
@@ -28,7 +28,6 @@ export default function TopRated() {
   }, [activeTab]);
 
   const fetchMovie = async (category) => {
-    console.log("category", category);
     try {
       const response = await fetch(
         `${BASE_URL}${category}?api_key=${API_KEY}&language=ko-KR&page=1`
