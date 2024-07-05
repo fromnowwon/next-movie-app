@@ -37,23 +37,21 @@ const navMenuData = [
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center">
-      <div className="flex justify-between">
+    <nav className="flex flex-col max-w-[980px] mx-auto">
+      <div className="flex justify-between items-center">
         <Link href="/">
           <h1>NEXT MOVIE</h1>
         </Link>
-        <div className="flex">
-          {navMenuData.map((menu) => (
-            <NavMenuItem
-              key={menu.id}
-              title={menu.title}
-              address={menu.address}
-            />
-          ))}
-        </div>
-      </div>
-      <div>
         <DarkModeSwitch />
+      </div>
+      <div className="flex gap-4">
+        {navMenuData.map((menu) => (
+          <NavMenuItem
+            key={menu.id}
+            title={menu.title}
+            address={menu.address}
+          />
+        ))}
       </div>
     </nav>
   );
