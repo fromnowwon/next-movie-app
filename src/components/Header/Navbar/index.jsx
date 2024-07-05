@@ -38,14 +38,14 @@ const navMenuData = [
 export default function Navbar() {
   return (
     <nav className="flex flex-col w-full">
-      <div className="flex justify-between items-center w-full max-w-[980px] mx-auto p-3">
+      <div className="flex justify-between items-center container mx-auto">
         <Link href="/">
           <h1 className="text-primary font-bold text-4xl">NEXT MOVIE</h1>
         </Link>
         <DarkModeSwitch />
       </div>
       <div className="w-full">
-        <div className="flex gap-4 max-w-[980px] mx-auto p-3">
+        <div className="flex gap-4 container mx-auto">
           {navMenuData.map((menu) => (
             <NavMenuItem
               key={menu.id}

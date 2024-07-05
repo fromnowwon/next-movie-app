@@ -6,6 +6,20 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      padding: {
+        DEFAULT: "1rem",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+      },
+      maxWidth: {
+        DEFAULT: "980px",
+        sm: "980px",
+        lg: "1200px",
+        xl: "1400px",
+      },
+    },
     extend: {
       colors: {
         primary: {

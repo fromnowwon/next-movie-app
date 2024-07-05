@@ -53,7 +53,7 @@ export default function TopRated() {
   };
 
   return (
-    <section className="p-3 mt-5">
+    <section className="mt-5">
       <Tabs tabData={tabData} onSelect={handleSelect} />
       <Results movies={movies} />
     </section>
