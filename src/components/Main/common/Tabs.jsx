@@ -6,13 +6,13 @@ export default function Tabs({ tabData, onSelect }) {
   };
 
   return (
-    <div className="flex gap-5">
+    <div className="flex gap-7">
       {tabData &&
         tabData.map((tab, index) => (
           <div
             key={tab.id}
             onClick={() => handleTabClick(index)}
-            className="cursor-pointer"
+            className="cursor-pointer text-3xl hover:text-primary"
           >
             {tab.title}
           </div>

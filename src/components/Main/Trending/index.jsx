@@ -47,7 +47,7 @@ export default function Trending() {
   };
 
   return (
-    <section className="p-3 mt-5">
+    <section className="mt-7">
       <Tabs tabData={tabData} onSelect={handleSelect} />
       <Results movies={movies} />
     </section>

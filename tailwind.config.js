@@ -8,10 +8,7 @@ module.exports = {
   theme: {
     container: {
       padding: {
-        DEFAULT: "0.5rem",
-        sm: "1rem",
-        lg: "1rem",
-        xl: "1rem",
+        DEFAULT: "1rem",
       },
       maxWidth: {
         DEFAULT: "980px",
@@ -21,7 +18,7 @@ module.exports = {
       colors: {
         primary: {
           DEFAULT: "#FB4357",
-          dark: "#FB4357",
+          dark: "#C53030",
         },
       },
       backgroundImage: {

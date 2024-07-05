@@ -4,7 +4,7 @@ import { FiThumbsUp } from "react-icons/fi";
 
 export default function MovieCard({ movie }) {
   return (
-    <div className="group w-[170px] cursor-pointer sm:hover:shadow-slate-300 sm:shadow-md rounded-lg sm:border sm:border-slate-200 transition-shadow duration-200">
+    <div className="group w-[170px] cursor-pointer sm:hover:shadow-slate-300 sm:shadow-md sm:border sm:border-slate-200 sm:m-2 transition-shadow duration-200">
       <Link href={`detail/${movie.id}`}>
         <div className="relative w-full h-[234px] overflow-hidden">
           <Image
@@ -13,9 +13,9 @@ export default function MovieCard({ movie }) {
             }
           }`}
             alt={movie.title || movie.name}
-            layout="fill"
-            objectFit="cover"
-            className="w-full h-full sm:rounded-t-lg group-hover:opacity-75 transition-opacity duration-300"
+            width={200}
+            height={300}
+            className="w-full h-auto object-cover group-hover:opacity-75 transition-opacity duration-300"
           ></Image>
         </div>
         <div className="w-full p-2">
