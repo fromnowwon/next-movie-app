@@ -38,9 +38,9 @@ export default function TopRated() {
       const data = await response.json();
       const movies = data.results;
 
-      // 평점 내림차순
+      // 인기도 내림차순
       if (category === "popular") {
-        movies.sort((a, b) => b.vote_average - a.vote_average);
+        movies.sort((a, b) => b.popularity - a.popularity);
       }
       setMovies(movies);
     } catch (error) {

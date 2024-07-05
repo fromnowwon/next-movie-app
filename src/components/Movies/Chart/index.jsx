@@ -8,8 +8,8 @@ export default async function Chart() {
   );
   const data = await response.json();
   let movies = data.results;
-  // 평점 내림차순
-  movies = movies.sort((a, b) => b.vote_average - a.vote_average);
+  // 인기도 내림차순
+  movies = movies.sort((a, b) => b.popularity - a.popularity);
 
   return (
     <div className="sm:grid sm:grid-cols-3 lg:gird-cols-4 xl:grid-cols-5 2xl:grid-cols-5 max-w-6xl mx-auto py-4 w-full">
