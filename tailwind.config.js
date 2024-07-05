@@ -8,16 +8,13 @@ module.exports = {
   theme: {
     container: {
       padding: {
-        DEFAULT: "1rem",
-        sm: "2rem",
-        lg: "4rem",
-        xl: "5rem",
+        DEFAULT: "0.5rem",
+        sm: "1rem",
+        lg: "1rem",
+        xl: "1rem",
       },
       maxWidth: {
         DEFAULT: "980px",
-        sm: "980px",
-        lg: "1200px",
-        xl: "1400px",
       },
     },
     extend: {
