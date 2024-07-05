@@ -8,10 +8,10 @@ import MovieCard from "./MovieCard";
 
 export default function Results({ movies }) {
   return (
-    <div>
+    <div className="mt-3">
       <Swiper
         modules={[Navigation, Scrollbar, A11y]}
-        spaceBetween={50}
+        spaceBetween={30}
         slidesPerView={1}
         breakpoints={{
           390: {

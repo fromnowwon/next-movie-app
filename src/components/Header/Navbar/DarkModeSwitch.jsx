@@ -12,6 +12,8 @@ export default function DarkModeSwitch() {
     setMouted(true);
   }, []);
 
+  if (!mounted) return null;
+
   const toggleMode = (mode) => {
     setTheme(mode);
   };
