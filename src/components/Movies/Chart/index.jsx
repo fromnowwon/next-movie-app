@@ -8,7 +8,7 @@ export default async function Chart() {
   );
   const data = await response.json();
   let movies = data.results;
-  // 평점 순서 내림차순
+  // 평점 내림차순
   movies = movies.sort((a, b) => b.vote_average - a.vote_average);
 
   return (

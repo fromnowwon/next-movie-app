@@ -36,7 +36,13 @@ export default function TopRated() {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      setMovies(data.results);
+      const movies = data.results;
+
+      // 평점 내림차순
+      if (category === "popular") {
+        movies.sort((a, b) => b.vote_average - a.vote_average);
+      }
+      setMovies(movies);
     } catch (error) {
       console.error(error);
     }
@@ -47,7 +53,7 @@ export default function TopRated() {
   };
 
   return (
-    <section>
+    <section className="p-3 mt-5">
       <Tabs tabData={tabData} onSelect={handleSelect} />
       <Results movies={movies} />
     </section>
