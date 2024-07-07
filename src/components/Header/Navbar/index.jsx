@@ -18,7 +18,7 @@ const navMenuData = [
 
 export default function Navbar() {
   return (
-    <nav className="flex flex-col w-full py-6">
+    <nav className="flex flex-col w-full">
       <div className="flex justify-between items-center container mx-auto">
         <Link href="/">
           <h1 className="text-primary dark:text-primary-dark font-bold text-4xl">
@@ -27,18 +27,20 @@ export default function Navbar() {
         </Link>
         <DarkModeSwitch />
       </div>
-      <div className="flex justify-between items-center container mx-auto">
-        <div className="flex gap-4 py-3">
-          {navMenuData.map((menu) => (
-            <NavMenuItem
-              key={menu.id}
-              title={menu.title}
-              address={menu.address}
-            />
-          ))}
-        </div>
-        <div>
-          <SearchBox />
+      <div className="w-full border-b-2 border-b-primary border-t-2 border-t-slate-100 mt-4">
+        <div className="flex justify-between items-center container mx-auto">
+          <div className="flex gap-4 py-3">
+            {navMenuData.map((menu) => (
+              <NavMenuItem
+                key={menu.id}
+                title={menu.title}
+                address={menu.address}
+              />
+            ))}
+          </div>
+          <div>
+            <SearchBox />
+          </div>
         </div>
       </div>
     </nav>

@@ -19,7 +19,7 @@ export default function SearchBox() {
         placeholder="검색어 입력"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="border p-2"
+        className="border-r-2 border-l-2 p-2 text-sm"
       />
       <button type="submit" disabled={searchQuery === ""} className="ml-2">
         <FiSearch />
