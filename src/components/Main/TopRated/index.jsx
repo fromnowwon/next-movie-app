@@ -2,6 +2,7 @@
 import Tabs from "../common/Tabs";
 import Results from "../common/Results";
 import { useEffect, useState } from "react";
+import Loading from "../common/Loader";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 const BASE_URL = `https://api.themoviedb.org/3/movie/`;
@@ -22,6 +23,7 @@ const tabData = [
 export default function TopRated() {
   const [movies, setMovies] = useState([]);
   const [activeTab, setActiveTab] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchMovie(tabData[activeTab].category);
@@ -29,6 +31,8 @@ export default function TopRated() {
 
   const fetchMovie = async (category) => {
     try {
+      setLoading(true);
+
       const response = await fetch(
         `${BASE_URL}${category}?api_key=${API_KEY}&language=ko-KR&page=1`
       );
@@ -45,6 +49,8 @@ export default function TopRated() {
       setMovies(movies);
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -55,7 +61,8 @@ export default function TopRated() {
   return (
     <section>
       <Tabs tabData={tabData} onSelect={handleSelect} />
-      <Results movies={movies} />
+
+      {loading ? <Loading /> : <Results movies={movies} />}
     </section>
   );
 }

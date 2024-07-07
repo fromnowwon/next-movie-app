@@ -12,7 +12,7 @@ export default async function Chart() {
   movies = movies.sort((a, b) => b.popularity - a.popularity);
 
   return (
-    <div className="sm:grid sm:grid-cols-4 lg:gird-cols-5 xl:grid-cols-5 2xl:grid-cols-5 max-w-6xl gap-9 mt-6">
+    <div className="sm:grid sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-5 gap-9 mt-6">
       {movies &&
         movies.map((movie, index) => (
           <Card key={movie.id} movie={movie} index={index} />

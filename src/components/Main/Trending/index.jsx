@@ -2,6 +2,7 @@
 import Tabs from "../common/Tabs";
 import Results from "../common/Results";
 import { useState, useEffect } from "react";
+import Loading from "../common/Loader";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 const BASE_URL = `https://api.themoviedb.org/3/trending/movie/`;
@@ -22,6 +23,7 @@ const tabData = [
 export default function Trending() {
   const [movies, setMovies] = useState([]);
   const [activeTab, setActiveTab] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchMovie(tabData[activeTab].category);
@@ -29,6 +31,8 @@ export default function Trending() {
 
   const fetchMovie = async (category) => {
     try {
+      setLoading(true);
+
       const response = await fetch(
         `${BASE_URL}${category}?api_key=${API_KEY}&language=ko-KR&page=1`
       );
@@ -39,6 +43,8 @@ export default function Trending() {
       setMovies(data.results);
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -49,7 +55,7 @@ export default function Trending() {
   return (
     <section className="mt-7">
       <Tabs tabData={tabData} onSelect={handleSelect} />
-      <Results movies={movies} />
+      {loading ? <Loading /> : <Results movies={movies} />}
     </section>
   );
 }

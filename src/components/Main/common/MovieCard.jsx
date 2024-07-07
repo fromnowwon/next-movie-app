@@ -13,9 +13,10 @@ export default function MovieCard({ movie }) {
             }
           }`}
             alt={movie.title || movie.name}
-            width={200}
-            height={300}
-            className="w-full h-auto object-cover group-hover:opacity-75 transition-opacity duration-300"
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8XA8AAisBVHpjGM0AAAAASUVORK5CYII="
           ></Image>
         </div>
         <div className="w-full p-2">

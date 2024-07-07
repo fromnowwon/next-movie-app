@@ -3,12 +3,11 @@ import { Navigation, Scrollbar, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./SwiperCustom.css";
-
 import MovieCard from "./MovieCard";
 
 export default function Results({ movies }) {
   return (
-    <div className="mt-3">
+    <div className="mt-3 min-h-[294px]">
       <Swiper
         modules={[Navigation, Scrollbar, A11y]}
         spaceBetween={30}
