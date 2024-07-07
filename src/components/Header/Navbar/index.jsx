@@ -11,28 +11,8 @@ const navMenuData = [
   },
   {
     id: 2,
-    title: "극장",
-    address: "/theaters",
-  },
-  {
-    id: 3,
     title: "예매",
     address: "/ticket",
-  },
-  {
-    id: 4,
-    title: "스토어",
-    address: "/store",
-  },
-  {
-    id: 5,
-    title: "이벤트",
-    address: "/event",
-  },
-  {
-    id: 6,
-    title: "혜택",
-    address: "/discount",
   },
 ];
 
