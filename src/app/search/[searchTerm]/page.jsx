@@ -15,9 +15,9 @@ export default async function SearchPage({ params }) {
       <h2 className="text-4xl pb-5 border-b-2 border-b-black dark:border-b-white">
         검색 결과
       </h2>
-      {results &&
-        results.length ===
-        <h1 className="text-center pt-6">No results found</h1>}
+      {results && results.length === 0 && (
+        <h1 className="text-center mt-6">검색 결과가 없습니다.</h1>
+      )}
       {results && <SearchResults results={results} />}
     </div>
   );
