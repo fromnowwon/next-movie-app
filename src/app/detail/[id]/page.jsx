@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
@@ -12,23 +13,28 @@ export default async function DetailPage({ params }) {
 
   return (
     <div className="container mx-auto pb-10">
-      <div className="flex flex-col md:flex-row">
-        <div className="relative w-full h-[300px] overflow-hidden">
+      <h2 className="text-4xl pb-5 border-b-2 border-b-black dark:border-b-white">
+        영화 정보
+      </h2>
+      <div className="flex flex-col items-center md:flex-row md:items-start mt-6">
+        <div className="flex-shrink-0 w-[300px] h-[500px]">
           <Image
             src={`https://image.tmdb.org/t/p/original/${
               movie.poster_path || movie.backdrop_path
             }
           }`}
             alt={movie.title || movie.name}
-            layout="fill"
-            objectFit="cover"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8XA8AAisBVHpjGM0AAAAASUVORK5CYII="
+            width={300}
+            height={500}
+            style={{ objectFit: "cover" }}
+            className="w-full h-full"
           />
         </div>
 
         <div className="mt-4 md:mt-0 md:ml-5">
-          <div className="relative">
+          <div>
             <h2 className="text-lg font-bold ">{movie.title || movie.name}</h2>
             <span className="text-sm">{movie.original_title}</span>
           </div>
@@ -50,6 +56,14 @@ export default async function DetailPage({ params }) {
               <span className="font-semibold mr-1">상영시간: </span>
               {movie.runtime}분
             </p>
+          </div>
+          <div className="mt-5">
+            <Link
+              href={`/ticket/${movie.id}`}
+              className="p-3 bg-primary text-white hover:bg-primary-dark transition-colors duration-100"
+            >
+              예매하기
+            </Link>
           </div>
         </div>
       </div>
