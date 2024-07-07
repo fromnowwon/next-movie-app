@@ -13,10 +13,11 @@ export default function MovieCard({ movie }) {
             }
           }`}
             alt={movie.title || movie.name}
-            layout="fill"
-            objectFit="cover"
+            width={300}
+            height={500}
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8XA8AAisBVHpjGM0AAAAASUVORK5CYII="
+            className="absolute inset-0 w-full h-full object-cover"
           ></Image>
         </div>
         <div className="w-full p-2">

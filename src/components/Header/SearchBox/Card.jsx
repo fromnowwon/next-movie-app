@@ -11,10 +11,11 @@ export default function Card({ result }) {
             src={`https://image.tmdb.org/t/p/original/${
               result.backdrop_path || result.poster_path
             }}`}
-            layout="fill"
-            objectFit="cover"
+            width={300}
+            height={500}
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8XA8AAisBVHpjGM0AAAAASUVORK5CYII="
+            className="absolute inset-0 w-full h-full object-cover"
           ></Image>
         </div>
         <div className="p-3">
