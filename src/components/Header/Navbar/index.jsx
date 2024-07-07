@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NavMenuItem from "./NavMenuItem";
 import DarkModeSwitch from "./DarkModeSwitch";
+import SearchBox from "../SearchBox";
 
 const navMenuData = [
   {
@@ -46,8 +47,8 @@ export default function Navbar() {
         </Link>
         <DarkModeSwitch />
       </div>
-      <div className="w-full mt-3">
-        <div className="flex gap-4 container mx-auto">
+      <div className="flex justify-between items-center container mx-auto">
+        <div className="flex gap-4 py-3">
           {navMenuData.map((menu) => (
             <NavMenuItem
               key={menu.id}
@@ -55,6 +56,9 @@ export default function Navbar() {
               address={menu.address}
             />
           ))}
+        </div>
+        <div>
+          <SearchBox />
         </div>
       </div>
     </nav>
