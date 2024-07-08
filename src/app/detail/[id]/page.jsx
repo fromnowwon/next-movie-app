@@ -5,11 +5,22 @@ const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 export default async function DetailPage({ params }) {
   const movieId = params.id;
-  const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=ko-KR&page=1`,
-    { next: { revalidate: 10000 } }
-  );
-  const movie = await response.json();
+  let movie = {};
+
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=ko-KR&page=1`,
+      { next: { revalidate: 10000 } }
+    );
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    movie = await response.json();
+  } catch (error) {
+    console.error(error);
+  }
 
   return (
     <div className="container mx-auto pb-10">

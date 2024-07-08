@@ -34,11 +34,14 @@ export default function TopRated() {
       setLoading(true);
 
       const response = await fetch(
-        `${BASE_URL}${category}?api_key=${API_KEY}&language=ko-KR&page=1`
+        `${BASE_URL}${category}?api_key=${API_KEY}&language=ko-KR&page=1`,
+        { next: { revalidate: 10000 } }
       );
+
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
+
       const data = await response.json();
       const movies = data.results;
 
